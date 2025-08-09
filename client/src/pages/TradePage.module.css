@@ -1,0 +1,107 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+  color: #ffffff;
+  text-shadow: -2.5px -2.5px 0 #4e3b31;
+  font-size: 3rem;
+}
+
+.subHeader {
+  margin-top: -10px;
+  padding-bottom: 20px;
+}
+
+.colorBox {
+  background-color: #31473a;
+  width: 85%;
+  max-width: 700px;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.bookRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.bookCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  height: 200px;
+  padding: 12px 16px;
+  background: #fafafa;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.01);
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.bookCard:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transform: scale(1.03);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.bookCard img {
+  border: 2px solid #000;
+}
+
+img {
+  width: 112px;
+  height: 166px;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+
+.bookTitle {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.2em 0 0.15em 0;
+  text-align: center;
+  height: 3rem;
+  line-height: 1.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.searchInput {
+  width: 100%;
+  max-width: 350px;
+  padding: 11px 16px;
+  font-size: 1rem;
+  border-radius: 24px;
+  border: 1.5px solid #31473a;
+  background-color: #f4f6f8;
+  box-shadow: 0 2px 8px rgba(49, 71, 58, 0.03);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin-bottom: 24px;
+  color: #000;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #60916d;
+  box-shadow: 0 0 6px 0 #80cfa9;
+  background: #fff;
+}

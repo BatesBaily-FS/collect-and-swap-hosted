@@ -1,0 +1,96 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 1rem 3rem 1rem;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  border-radius: 12px;
+  background: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 16px rgba(49, 71, 58, 0.07);
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 550px;
+  margin-bottom: 2rem;
+}
+
+.searchBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  border: 2ps solid #f4f4f4;
+  object-position: cover;
+  box-shadow: 0 2px 8px rgba(49, 71, 58, 0.1);
+}
+
+.userInfo {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #31473a;
+}
+.bookCollection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+}
+
+.tradeActivitySection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  width: 96%;
+}
+
+.locationInput {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.locationInput:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 119, 204, 0.5);
+}
+
+.submitButton {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: #31473a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}

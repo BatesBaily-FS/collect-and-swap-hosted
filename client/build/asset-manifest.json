@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1b6eb1c2.css",
+    "main.js": "/static/js/main.3bfa5d41.js",
+    "static/js/453.a3c1d153.chunk.js": "/static/js/453.a3c1d153.chunk.js",
+    "static/media/Logo.png": "/static/media/Logo.a16d0aab4e8c0c77b2f6.png",
+    "static/media/single-row-book-shelf.jpg": "/static/media/single-row-book-shelf.197135a30566978da934.jpg",
+    "index.html": "/index.html",
+    "main.1b6eb1c2.css.map": "/static/css/main.1b6eb1c2.css.map",
+    "main.3bfa5d41.js.map": "/static/js/main.3bfa5d41.js.map",
+    "453.a3c1d153.chunk.js.map": "/static/js/453.a3c1d153.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1b6eb1c2.css",
+    "static/js/main.3bfa5d41.js"
+  ]
+}

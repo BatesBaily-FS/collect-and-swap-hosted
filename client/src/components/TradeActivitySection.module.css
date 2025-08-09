@@ -1,0 +1,90 @@
+.mainContainer {
+  background: #fff;
+  color: #31473a;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(49, 71, 58, 0.07);
+  width: 90%;
+  max-width: 500px;
+  margin: 1.5rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.heading {
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.subHeading {
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-bottom: 1px solid #60916d;
+}
+
+.emptyMessage {
+  font-style: italic;
+  color: #999999;
+  text-align: center;
+  height: 0.9rem;
+  padding-top: 0.2rem;
+}
+
+.tradeCard,
+.tradeHistoryCard {
+  background: #f4f6f8;
+  border-radius: 8px;
+  padding: 0.5rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+}
+
+.tradeInfo {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.button {
+  border: none;
+  border-radius: 16px;
+  padding: 0.3rem 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2 ease, color 0.2 ease;
+  font-size: 0.85rem;
+  color: white;
+}
+
+.accept {
+  background-color: #4caf50;
+}
+
+.accept:hover {
+  background-color: #39843c;
+}
+
+.reject {
+  background-color: #f44336;
+}
+
+.reject:hover {
+  background-color: #b3332b;
+}
+
+.delete {
+  background-color: #999999;
+}
+
+.delete:hover {
+  background-color: #666666;
+}
