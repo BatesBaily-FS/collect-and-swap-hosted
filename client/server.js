@@ -2,11 +2,13 @@ const express = require("express");
 const path = require("path");
 const app = express();
 
-app.use(express.static(path.join(__dirname, "build")));
+app._router.stack.forEach((layer) => {
+  if (layer.route) {
+    console.log(`Defined route: ${layer.route.path}`);
+  }
+});
 
-// app.get("/*splat", (req, res) => {
-//   res.sendFile(path.join(__dirname, "build", "index.html"));
-// });
+app.use(express.static(path.join(__dirname, "build")));
 
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
