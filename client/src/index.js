@@ -21,7 +21,8 @@ root.render(
         domain={domain}
         clientId={clientId}
         authorizationParams={{
-          redirect_uri: process.env.REACT_APP_AUTH0_CALLBACK_URL,
+          redirect_uri:
+            "https://collect-and-swap-frontend.onrender.com/callback",
         }}
       >
         <App />
