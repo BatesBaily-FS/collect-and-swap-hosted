@@ -18,6 +18,8 @@ const PORT = process.env.PORT || 5050;
 app.use(
   cors({
     origin: "https://collect-and-swap-frontend.onrender.com",
+    credentials: true,
+    optionsSuccessStatus: 200,
   })
 );
 app.use(express.json());
@@ -42,15 +44,6 @@ app.use("/api/books", bookRoutes);
 app.use("/api/trade-proposals", tradeProposalRoutes);
 app.use("/api/book-clubs", bookClubRoutes);
 app.use("/api/events", eventRoutes);
-
-// In your Express app (typically server.js or index.js)
-const path = require("path");
-app.use(express.static(path.join(__dirname, "client/build")));
-
-// Send the React index.html for any unknown route
-app.get("/*splat", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/build", "index.html"));
-});
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
