@@ -15,7 +15,11 @@ const eventRoutes = require("./routes/eventRoutes");
 const app = express();
 const PORT = process.env.PORT || 5050;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://collect-and-swap-frontend.onrender.com",
+  })
+);
 app.use(express.json());
 
 mongoose
