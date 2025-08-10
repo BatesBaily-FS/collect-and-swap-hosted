@@ -8,19 +8,18 @@ import { BrowserRouter } from "react-router-dom";
 // import { APIProvider } from "@vis.gl/react-google-maps";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-// const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+const domain = process.env.REACT_APP_AUTH0_DOMAIN;
+const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
+const redirectUri = process.env.REACT_APP_AUTH0_CALLBACK_URL;
 
 root.render(
   <React.StrictMode>
     {/* <APIProvider apiKey={apiKey} libraries={["places"]}> */}
     <BrowserRouter>
       <Auth0Provider
-        domain="dev-ck4nx3l57ptykeyg.us.auth0.com"
-        clientId="QmcMOXJAWYlYMHjfhn7JhoithN23Q0MX"
-        authorizationParams={{
-          redirect_uri: window.location.origin + "/callback",
-        }}
+        domain={domain}
+        clientId={clientId}
+        authorizationParams={{ redirect_uri: redirectUri }}
       >
         <App />
       </Auth0Provider>
