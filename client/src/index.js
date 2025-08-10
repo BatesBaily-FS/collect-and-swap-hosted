@@ -20,7 +20,9 @@ root.render(
       <Auth0Provider
         domain={domain}
         clientId={clientId}
-        authorizationParams={{ redirect_uri: redirectUri }}
+        authorizationParams={{
+          redirect_uri: process.env.REACT_APP_AUTH0_CALLBACK_URL,
+        }}
       >
         <App />
       </Auth0Provider>
