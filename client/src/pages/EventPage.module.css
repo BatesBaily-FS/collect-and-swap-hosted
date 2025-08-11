@@ -49,6 +49,7 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  align-items: center;
 }
 
 .eventRow {
@@ -258,5 +259,23 @@
 
   .colorBox {
     width: 80%;
+  }
+}
+
+@media (min-width: 350px) {
+  .searchInput {
+    width: 80%;
+  }
+
+  .date {
+    font-size: 0.9rem;
+  }
+
+  .location {
+    font-size: 0.9rem;
+  }
+
+  .description {
+    font-weight: 600;
   }
 }

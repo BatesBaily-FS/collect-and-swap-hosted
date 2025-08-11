@@ -80,3 +80,14 @@
   width: 40px;
   user-select: none;
 }
+
+@media (min-width: 350px) {
+  .settingsBox {
+    width: 90%;
+  }
+
+  .settings {
+    height: 180px;
+    width: 100%;
+  }
+}

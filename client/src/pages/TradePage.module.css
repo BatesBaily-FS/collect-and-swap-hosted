@@ -87,7 +87,7 @@ img {
 
 .searchInput {
   width: 100%;
-  max-width: 350px;
+  max-width: 300px;
   padding: 11px 16px;
   font-size: 1rem;
   border-radius: 24px;
@@ -106,6 +106,7 @@ img {
   background: #fff;
 }
 
+/* medium */
 @media (max-width: 600px) {
   title {
     font-size: 2.5rem;
@@ -177,5 +178,27 @@ img {
   .colorBox {
     width: 75%;
     align-items: center;
+  }
+}
+
+/* mobile */
+@media (min-width: 350px) {
+  .title {
+    font-size: 2.3rem;
+  }
+
+  .subHeader {
+    font-size: 1rem;
+  }
+
+  .colorBox {
+    width: 75%;
+    align-items: center;
+  }
+
+  .bookRow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 0 10px 0 10px;
   }
 }

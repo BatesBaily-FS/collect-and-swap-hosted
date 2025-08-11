@@ -40,6 +40,13 @@
   padding: 2.5rem 2rem 3rem;
   border-radius: 14px;
   box-shadow: 0 6px 18px rgba(49, 71, 58, 0.12);
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(49, 71, 58, 0.03) 0px,
+    rgba(49, 71, 58, 0.03) 2px,
+    transparent 2px,
+    transparent 10px
+  );
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -152,5 +159,17 @@
     top: 17rem;
     left: 4rem;
     z-index: 1;
+  }
+}
+
+@media (min-width: 350px) {
+  .mainContent {
+    margin-top: 1rem;
+  }
+
+  .tradeButton {
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
   }
 }

@@ -15,12 +15,13 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-wrap: nowrap;
 }
 
 .logo {
   width: 150px;
   height: 150px;
-  margin-right: 5x;
+  margin-right: 5px;
 }
 
 .titleContainer {
@@ -35,6 +36,10 @@
   font-size: 2.5rem;
   font-weight: bold;
   color: #ffffff;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .iconGroup {
@@ -46,7 +51,7 @@
 
 .nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   padding: 20px 0;
   background-color: #d9d9d9;
   border: 5px solid #31473a;
@@ -106,7 +111,7 @@
   filter: grayscale(0%);
 }
 
-@media (max-width: 500px) and (min-width: 200px) {
+@media (max-width: 500px) and (min-width: 300px) {
   .nav {
     border-width: 3px;
   }
@@ -122,8 +127,12 @@
   }
 
   .title {
-    font-size: 1.7rem;
-    font-weight: bold;
+    font-size: 1.4rem;
+  }
+
+  .logo {
+    width: 90px;
+    height: 90px;
   }
 }
 

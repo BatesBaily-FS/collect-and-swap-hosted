@@ -88,3 +88,9 @@
 .delete:hover {
   background-color: #666666;
 }
+
+@media (min-width: 350px) {
+  .mainContainer {
+    width: 70%;
+  }
+}

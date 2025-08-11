@@ -149,3 +149,28 @@ img {
     width: 80%;
   }
 }
+
+/* mobile */
+@media (min-width: 350px) {
+  .title {
+    font-size: 1.7rem;
+  }
+
+  .resultsContainer {
+    width: 70%;
+  }
+
+  .bookCard {
+    width: 110px;
+    height: auto;
+  }
+
+  img {
+    width: 110px;
+    height: 165px;
+  }
+
+  .categoryTitle {
+    font-size: 1.2rem;
+  }
+}
