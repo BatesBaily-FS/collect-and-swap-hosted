@@ -145,15 +145,17 @@ img {
 }
 
 @media (min-width: 501px) and (max-width: 999px) {
+  .title {
+    font-size: 2rem;
+  }
   .resultsContainer {
     width: 80%;
   }
 }
 
-/* mobile */
-@media (min-width: 350px) {
+@media (min-width: 350px) and (max-width: 499px) {
   .title {
-    font-size: 1.7rem;
+    font-size: 1rem;
   }
 
   .resultsContainer {

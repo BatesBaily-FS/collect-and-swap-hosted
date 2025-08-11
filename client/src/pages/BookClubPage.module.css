@@ -98,7 +98,7 @@ h1 {
 }
 
 .clubName {
-  width: 200px;
+  width: 80px;
   flex-shrink: 0;
   font-size: 1.25rem;
   font-weight: 700;
@@ -109,19 +109,12 @@ h1 {
 .description {
   flex: 1;
   color: #555;
-  font-size: 1rem;
+  font-size: 0.9rem;
   overflow-wrap: anywhere;
   user-select: none;
-}
-
-@media (min-width: 501px) and (max-width: 999px) {
-  h1 {
-    font-size: 2.2rem;
-  }
-
-  .clubsContainer {
-    width: 80%;
-  }
+  max-height: 100px;
+  padding-bottom: 0.5rem;
+  max-width: 150px;
 }
 
 @media (min-width: 350px) and (max-width: 500px) {
@@ -142,9 +135,24 @@ h1 {
 
   .description {
     font-size: 0.85rem;
+    text-align: center;
     line-height: 1.3;
     max-height: 6rem;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+}
+
+@media (min-width: 501px) {
+  .description {
+    text-align: center;
+  }
+
+  .clubsContainer {
+    width: 80%;
+  }
+
+  .clubName {
+    font-size: 1.2rem;
   }
 }

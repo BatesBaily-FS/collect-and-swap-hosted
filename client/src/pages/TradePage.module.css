@@ -106,83 +106,8 @@ img {
   background: #fff;
 }
 
-/* medium */
-@media (max-width: 600px) {
-  title {
-    font-size: 2.5rem;
-  }
-
-  .colorBox {
-    width: 80%;
-    align-items: center;
-  }
-
-  .bookRow {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin: 0 10px 0 10px;
-  }
-
-  .bookCard {
-    width: 100px;
-    height: auto;
-    padding: 10px 12px;
-  }
-
-  img {
-    width: 90px;
-    height: 140px;
-  }
-
-  .bookTitle {
-    font-size: 0.8rem;
-    height: 3rem;
-    line-height: 1.5rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-
-@media (min-width: 601px) {
-  .colorBox {
-    width: 85%;
-    align-items: center;
-  }
-
-  .bookRow {
-    gap: 1rem;
-    margin: 0 5px 0 5px;
-  }
-
-  .bookCard {
-    width: 100px;
-    height: auto;
-    padding: 10px 12px;
-  }
-
-  img {
-    width: 90px;
-    height: 140px;
-  }
-
-  .bookTitle {
-    font-size: 0.8rem;
-    height: 3rem;
-    line-height: 1.5rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-
-@media (min-width: 700px) {
-  .colorBox {
-    width: 75%;
-    align-items: center;
-  }
-}
-
 /* mobile */
-@media (min-width: 350px) {
+@media (max-width: 499px) {
   .title {
     font-size: 2.3rem;
   }
@@ -199,6 +124,85 @@ img {
   .bookRow {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    margin: 0 10px 0 10px;
+    margin: 0 10px;
+  }
+}
+
+/* medium */
+@media (min-width: 500px) and (max-width: 600px) {
+  title {
+    font-size: 2.5rem;
+  }
+
+  .colorBox {
+    width: 80%;
+    align-items: center;
+  }
+
+  .bookRow {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 0 10px;
+  }
+
+  .bookCard {
+    width: 100px;
+    height: auto;
+    padding: 10px 12px;
+  }
+
+  img {
+    width: 90px;
+    height: 140px;
+  }
+
+  .bookTitle {
+    font-size: 0.8rem;
+    height: 3rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 601px) {
+  .colorBox {
+    width: 85%;
+    align-items: center;
+  }
+
+  .bookRow {
+    gap: 1rem;
+    margin: 0 5px;
+  }
+
+  .bookCard {
+    width: 100px;
+    height: auto;
+    padding: 10px 12px;
+  }
+
+  img {
+    width: 90px;
+    height: 140px;
+  }
+
+  .bookTitle {
+    font-size: 0.8rem;
+    height: 3rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .colorBox {
+    width: 75%;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1000px) {
+  .bookRow {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin: 0 10px;
   }
 }
