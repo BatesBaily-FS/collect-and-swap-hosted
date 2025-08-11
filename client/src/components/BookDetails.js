@@ -1,8 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./BookDetails.module.css";
 
 const BookDetails = ({ books = [] }) => {
+  // responsive columns on small screens
+  const [columns, setColumns] = useState(window.innerWidth <= 500 ? 3 : 4);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setColumns(window.innerWidth <= 500 ? 3 : 4);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const chunkBooks = (books, chunkSize) => {
     const rows = [];
     for (let i = 0; i < books.length; i += chunkSize) {
@@ -11,7 +22,7 @@ const BookDetails = ({ books = [] }) => {
     return rows;
   };
 
-  const bookRows = chunkBooks(books, 4);
+  const bookRows = chunkBooks(books, columns);
 
   return (
     <div className={styles.collectionContainer}>
