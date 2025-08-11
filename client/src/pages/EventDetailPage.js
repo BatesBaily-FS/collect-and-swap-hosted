@@ -61,7 +61,6 @@ const EventDetailPage = () => {
         <Link to={"/events"} aria-label="Back to Events">
           <span className={styles.arrow}></span>
         </Link>
-        <h1 className={styles.pageTitle}>Event Details</h1>
 
         <section className={styles.eventDetails}>
           <h2 className={styles.eventName}>{event.eventName}</h2>

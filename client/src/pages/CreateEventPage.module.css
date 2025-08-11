@@ -79,3 +79,15 @@
 h1 {
   color: #fff;
 }
+
+@media (max-width: 500px) {
+  .form {
+    width: 80%;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 999px) {
+  .form {
+    width: 80%;
+  }
+}

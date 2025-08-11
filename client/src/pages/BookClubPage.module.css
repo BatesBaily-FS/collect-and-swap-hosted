@@ -26,7 +26,7 @@ h1 {
   background-color: #f4f6f8;
   box-shadow: 0 2px 8px rgba(49, 71, 58, 0.03);
   transition: border-color 0.2s, box-shadow 0.2s;
-  margin-bottom: 24px;
+  margin-bottom: 1rem;
   color: #000;
 }
 
@@ -70,7 +70,7 @@ h1 {
 }
 
 .newClubButton {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   height: 100%;
   max-width: 120px;
   width: 100%;
@@ -111,4 +111,29 @@ h1 {
   font-size: 1rem;
   overflow-wrap: anywhere;
   user-select: none;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.85rem;
+    padding: 0.5rem 0.5rem;
+  }
+
+  .clubsContainer {
+    width: 75%;
+  }
+
+  .clubName {
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 999px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .clubsContainer {
+    width: 80%;
+  }
 }

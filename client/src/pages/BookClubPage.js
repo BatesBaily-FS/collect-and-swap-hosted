@@ -20,7 +20,6 @@ function BookClubPage({ currentUser }) {
     <div className={styles.mainContainer}>
       <Header />
       <h1>Find Your Community of Book Lovers!</h1>
-
       <input
         type="text"
         placeholder="Search clubs..."
@@ -35,7 +34,7 @@ function BookClubPage({ currentUser }) {
           navigate(`/clubs/create`);
         }}
       >
-        Create Book Club
+        Create Club
       </button>
 
       {loading && <p>Loading clubs...</p>}
