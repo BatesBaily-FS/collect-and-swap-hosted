@@ -16,6 +16,7 @@
   align-items: center;
   gap: 12px;
   flex-wrap: nowrap;
+  flex: 0 0 auto;
 }
 
 .logo {
@@ -41,6 +42,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  flex: 0 0 auto;
 }
 
 .iconGroup {
@@ -48,6 +50,7 @@
   align-items: center;
   gap: 16px;
   margin-right: 5px;
+  flex: 0 0 auto;
 }
 
 .nav {
@@ -147,5 +150,25 @@
 @media (min-width: 1001px) {
   .navList {
     width: 80%;
+  }
+}
+
+@media (max-width: 390px) {
+  .logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    flex-shrink: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .iconGroup {
+    gap: 8px;
+    margin-right: 2px;
   }
 }
