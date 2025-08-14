@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const router = express.Router();
 const Book = require("../models/bookModel");
+const User = require("../models/userModel");
+
 // const { requireAuth } = require("../middleware/auth");
 
 router.get("/", async (req, res) => {
@@ -12,6 +14,17 @@ router.get("/", async (req, res) => {
       filter.owner = req.query.owner;
     }
     const books = await Book.find(filter);
+    res.json(books);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+router.get("/user/:ownerId", async (req, res) => {
+  const { ownerId } = req.params;
+
+  try {
+    const books = await Book.find({ owner: ownerId });
     res.json(books);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -40,6 +53,13 @@ router.post("/", async (req, res) => {
       owner,
     });
     await book.save();
+
+    await User.findByIdAndUpdate(
+      owner,
+      { $push: { books: book._id } },
+      { new: true, useFindAndModify: false }
+    );
+
     res.status(201).json(book);
   } catch (err) {
     res.status(400).json({ error: err.message });
@@ -96,6 +116,13 @@ router.delete("/delete/:id", async (req, res) => {
     if (!book) {
       return res.status(404).json({ error: "Book not found" });
     }
+
+    await User.findByIdAndUpdate(
+      book.owner,
+      { $pull: { books: book._id } },
+      { useFindAndModify: false }
+    );
+
     res.json({ message: "Book Deleted Successfully" });
   } catch (err) {
     return res.status(500).json({ error: err.message });

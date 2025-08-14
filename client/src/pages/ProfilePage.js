@@ -34,7 +34,7 @@ const ProfilePage = () => {
     if (!profileInfo?._id) return;
     try {
       const token = await getAccessTokenSilently();
-      const res = await fetch(`${apiURL}/api/books`, {
+      const res = await fetch(`${apiURL}/api/books/user/${profileInfo._id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -218,11 +218,10 @@ const ProfilePage = () => {
             )}
           </div>
         </div>
-
+        I
         <section>
           <TradeActivitySection />
         </section>
-
         <div className={styles.searchBar}>
           {profileInfo && profileInfo._id && (
             <AddBookWithSearch
@@ -231,7 +230,6 @@ const ProfilePage = () => {
             />
           )}
         </div>
-
         <section className={styles.bookCollection}>
           <BookDetails books={books} />
           <LogoutButton />
