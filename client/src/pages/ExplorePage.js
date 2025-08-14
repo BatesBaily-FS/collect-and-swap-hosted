@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import styles from "./ExplorePage.module.css";
@@ -52,29 +53,40 @@ const ExplorePage = () => {
       </Link>
     ));
   return (
-    <div className={styles.mainContainer}>
-      <Header />
-      <div className={styles.headings}>
-        <h1 className={styles.title}>Find Your Next Read & More</h1>
-        <h3 className={styles.subHeader}>Browse our selections of the week</h3>
+    <>
+      <Helmet>
+        <title>Discover Books | Reading Community App - Collect & Swap</title>
+        <meta
+          name="description"
+          content="Explore trending books, staff picks, and curate genres. Find something new to read and connect with our online book community."
+        />
+      </Helmet>
+      <div className={styles.mainContainer}>
+        <Header />
+        <div className={styles.headings}>
+          <h1 className={styles.title}>Find Your Next Read & More</h1>
+          <h3 className={styles.subHeader}>
+            Browse our selections of the week
+          </h3>
+        </div>
+        <main className={styles.resultsContainer}>
+          {exploreCategories.map((cat) => (
+            <section key={cat.key} className={styles.categorySection}>
+              <h2 className={styles.categoryTitle}>
+                {cat.label.split(" ").map((word, idx) => (
+                  <span key={idx} className={styles.categoryTitleWord}>
+                    {word}
+                  </span>
+                ))}
+              </h2>
+              <div className={styles.bookRow}>
+                {renderBooks(bookByCategory[cat.key] || [])}
+              </div>
+            </section>
+          ))}
+        </main>
       </div>
-      <main className={styles.resultsContainer}>
-        {exploreCategories.map((cat) => (
-          <section key={cat.key} className={styles.categorySection}>
-            <h2 className={styles.categoryTitle}>
-              {cat.label.split(" ").map((word, idx) => (
-                <span key={idx} className={styles.categoryTitleWord}>
-                  {word}
-                </span>
-              ))}
-            </h2>
-            <div className={styles.bookRow}>
-              {renderBooks(bookByCategory[cat.key] || [])}
-            </div>
-          </section>
-        ))}
-      </main>
-    </div>
+    </>
   );
 };
 

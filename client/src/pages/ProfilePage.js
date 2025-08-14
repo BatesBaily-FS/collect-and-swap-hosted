@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import Header from "../components/Header";
 import { useAuth0 } from "@auth0/auth0-react";
 import BookDetails from "../components/BookDetails";
@@ -147,6 +148,16 @@ const ProfilePage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>
+          Your Profile | Book Sharing Platform & Secondhand Book App - Collect &
+          Swap
+        </title>
+        <meta
+          name="description"
+          content="Manage your book collection, send and respond to trade proposals, join book clubs, and connect with a reading community on Collect & Swap."
+        />
+      </Helmet>
       <Header />
       <div className={styles.mainContainer}>
         <div className={styles.userInfo}>

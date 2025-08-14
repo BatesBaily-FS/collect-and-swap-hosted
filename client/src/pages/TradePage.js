@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import Header from "../components/Header";
 import styles from "./TradePage.module.css";
 import { Link } from "react-router-dom";
@@ -62,37 +63,48 @@ const TradePage = () => {
     ));
 
   return (
-    <div className={styles.mainContainer}>
-      <Header />
-      <h1 className={styles.title}>Books For Trade...</h1>
-      <h3 className={styles.subHeader}>
-        Share your shelf, find your next favorite
-      </h3>
-      <input
-        type="text"
-        placeholder="Search by book tile or author..."
-        value={searchTerm}
-        onChange={(e) => {
-          const term = e.target.value;
-          setSearchTerm(term);
-          if (term.trim()) {
-            fetchBooks(term);
-          } else {
-            fetchBooks("best sellers");
-          }
-        }}
-        className={styles.searchInput}
-      />
-      <div className={styles.colorBox}>
-        <div className={styles.resultsContainer}>
-          {loading && <p>Loading book...</p>}
-          {!loading && error && <p>{error}</p>}
-          {!loading && books.length > 0 && (
-            <div className={styles.bookRow}>{renderBooks(books)}</div>
-          )}
+    <>
+      <Helmet>
+        <title>Trade Books Online | Book Trading App - Collect & Swap</title>
+        <meta
+          name="description"
+          content="Trade used books online with other readers. Search by title, author, or genre on our boo trading platform abd expand your personal library."
+        />
+      </Helmet>
+      <div className={styles.mainContainer}>
+        <Header />
+        <h1 className={styles.title}>Books For Trade...</h1>
+        <h3 className={styles.subHeader}>
+          Share your shelf, find your next favorite
+        </h3>
+        <input
+          type="text"
+          placeholder="Search by book tile or author..."
+          value={searchTerm}
+          onChange={(e) => {
+            const term = e.target.value;
+            setSearchTerm(term);
+            if (term.trim()) {
+              fetchBooks(term);
+            } else {
+              fetchBooks("best sellers");
+            }
+          }}
+          className={styles.searchInput}
+        />
+
+        {/* green color box */}
+        <div className={styles.colorBox}>
+          <div className={styles.resultsContainer}>
+            {loading && <p>Loading book...</p>}
+            {!loading && error && <p>{error}</p>}
+            {!loading && books.length > 0 && (
+              <div className={styles.bookRow}>{renderBooks(books)}</div>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

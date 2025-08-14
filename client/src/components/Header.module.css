@@ -153,22 +153,205 @@
   }
 }
 
-@media (max-width: 390px) {
-  .logo {
-    width: 70px;
-    height: 70px;
+.header {
+  width: 100%;
+  background-color: #4b4b4b;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+  flex: 0 0 auto;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  margin-right: 5px;
+  padding-left: 0.2rem;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.title {
+  align-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 0 0 auto;
+}
+
+.iconGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-right: 5px;
+  flex: 0 0 auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  background-color: #d9d9d9;
+  border: 5px solid #31473a;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.navList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+.navList li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.navList li a:hover {
+  color: #007bff;
+}
+
+.profileIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  transition: border 0.2s;
+}
+
+.profileIcon:hover {
+  border: 2px solid #007bff;
+}
+
+.iconLink {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.SettingsIcon {
+  width: 28px;
+  height: 28px;
+  filter: grayscale(75%);
+  transition: filter 0.2s;
+}
+
+.settingsIcon:hover {
+  filter: grayscale(0%);
+}
+
+@media (max-width: 500px) and (min-width: 300px) {
+  .nav {
+    border-width: 3px;
+  }
+
+  .navList {
+    width: 100%;
+    justify-content: space-evenly;
+    gap: 0;
+  }
+
+  .navList li a {
+    font-size: 1rem;
   }
 
   .title {
-    font-size: 1.2rem;
-    flex-shrink: 1;
+    font-size: 1.4rem;
+  }
+
+  .logo {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1000px) {
+  .navList {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 1001px) {
+  .navList {
+    width: 80%;
+  }
+}
+
+@media (max-width: 390px) {
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .title {
+    font-size: 1rem;
+    flex-shrink: 1 1 auto;
+    min-width: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   .iconGroup {
-    gap: 8px;
+    gap: 6px;
     margin-right: 2px;
+  }
+
+  .SettingsIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .profileIcon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 345px) {
+  .nav {
+    width: 100vw;
+    margin: 0;
+    padding: 12px 4px;
+    border-left: none;
+    border-right: none;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  .navList {
+    width: 100%;
+    gap: 0;
   }
 }
