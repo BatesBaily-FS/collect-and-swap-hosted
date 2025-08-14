@@ -36,7 +36,9 @@ const TradeProposalPage = () => {
       try {
         // const token = await getAccessTokenSilently();
 
-        const res = await fetch(`${apiURL}/api/books`);
+        if (!profileInfo?._id) return;
+
+        const res = await fetch(`${apiURL}/api/books/user/${profileInfo._id}`);
         if (!res.ok) throw new Error("Failed to fetch user books");
         const books = await res.json();
         setUserBooks(books);
@@ -54,7 +56,7 @@ const TradeProposalPage = () => {
       }
     };
     fetchBooksAndRequestedBook();
-  }, [bookId]);
+  }, [bookId, profileInfo?._id]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
