@@ -218,7 +218,6 @@ const ProfilePage = () => {
             )}
           </div>
         </div>
-        I
         <section>
           <TradeActivitySection />
         </section>
