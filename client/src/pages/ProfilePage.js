@@ -13,9 +13,9 @@ const apiURL = process.env.REACT_APP_API_URL || "";
 const ProfilePage = () => {
   const { user, isAuthenticated, isLoading, getAccessTokenSilently } =
     useAuth0();
-  console.log("Auth0 loading", isLoading);
-  console.log("Auth0 isAuthenticated", isAuthenticated);
-  console.log("Auth0 user:", user);
+  // console.log("Auth0 loading", isLoading);
+  // console.log("Auth0 isAuthenticated", isAuthenticated);
+  // console.log("Auth0 user:", user);
   const [books, setBooks] = useState([]);
   const [profileInfo, setProfileInfo] = useState(null);
   const [showLocationInput, setShowLocationInput] = useState(false);
