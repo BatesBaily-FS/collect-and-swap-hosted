@@ -1,4 +1,5 @@
 const TradeProposal = require("../models/tradeProposalModel");
+const User = require("../models/userModel");
 
 // create proposal
 exports.createProposal = async (req, res) => {
@@ -18,6 +19,11 @@ exports.createProposal = async (req, res) => {
       status,
     });
     await proposal.save();
+
+    await User.findByIdAndUpdate(sender, {
+      $push: { tradeProposals: proposal._id },
+    });
+
     res.status(201).json(proposal);
   } catch (err) {
     res.status(400).json({ error: err.message });
@@ -34,6 +40,20 @@ exports.getAllProposals = async (req, res) => {
     if (!proposal)
       return res.status(404).json({ error: "Proposal not found " });
     res.json(proposal);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+// get users trade proposals
+exports.getUsersProposals = async (req, res) => {
+  try {
+    const userId = req.user_id || req.params.userId;
+    const proposals = await TradeProposal.find({ sender: userId })
+      .populate("sender", "username email")
+      .populate("bookOffered", "title authors")
+      .populate("bookDesired", "title authors");
+    res.json(proposals);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

@@ -1,14 +1,16 @@
 import { useTradeManager } from "../hooks/tradeManager";
 import styles from "./TradeActivitySection.module.css";
 
-const TradeActivitySection = () => {
+const userId = localStorage.getItem("_id");
+
+const TradeActivitySection = ({ userId }) => {
   const {
     tradeRequests,
     tradeHistory,
     activeTradeCount,
     updateTradeStatus,
     deleteProposal,
-  } = useTradeManager();
+  } = useTradeManager(userId);
 
   return (
     <div className={styles.mainContainer}>

@@ -114,7 +114,8 @@ h1 {
   user-select: none;
   max-height: 100px;
   padding-bottom: 0.5rem;
-  max-width: 150px;
+  max-width: auto;
+  margin: 0.8rem;
 }
 
 @media (min-width: 350px) and (max-width: 500px) {
