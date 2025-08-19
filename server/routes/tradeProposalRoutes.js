@@ -5,6 +5,7 @@ const { requireAuth } = require("../middleware/auth");
 
 router.post("/", tradeProposalController.createProposal);
 router.get("/", tradeProposalController.getAllProposals);
+router.get("/user/:userId", tradeProposalController.getUsersProposals);
 router.get("/:id", tradeProposalController.getProposalById);
 router.put("/update/:id", tradeProposalController.updatedProposalById);
 router.delete("/delete/:id", tradeProposalController.deleteProposal);

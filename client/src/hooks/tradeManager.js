@@ -3,7 +3,7 @@ import axios from "axios";
 
 const apiURL = process.env.REACT_APP_API_URL || "";
 
-export const useTradeManager = () => {
+export const useTradeManager = (userId) => {
   const [tradeRequests, setTradeRequests] = useState([]);
   const [tradeHistory, setTradeHistory] = useState([]);
 
@@ -12,8 +12,12 @@ export const useTradeManager = () => {
   }, [tradeRequests]);
 
   const fetchTradeRequests = async () => {
+    if (!userId) return;
+
     try {
-      const res = await axios.get(`${apiURL}/api/trade-proposals/`);
+      const res = await axios.get(
+        `${apiURL}/api/trade-proposals/user/${userId}`
+      );
       const allTrades = res.data;
 
       setTradeRequests(allTrades);
@@ -64,7 +68,7 @@ export const useTradeManager = () => {
 
   useEffect(() => {
     fetchTradeRequests();
-  }, []);
+  }, [userId]);
 
   return {
     tradeRequests,

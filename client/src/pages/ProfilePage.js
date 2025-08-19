@@ -218,8 +218,11 @@ const ProfilePage = () => {
             )}
           </div>
         </div>
+
         <section>
-          <TradeActivitySection />
+          {profileInfo && profileInfo._id && (
+            <TradeActivitySection userId={profileInfo._id} />
+          )}
         </section>
         <div className={styles.searchBar}>
           {profileInfo && profileInfo._id && (
