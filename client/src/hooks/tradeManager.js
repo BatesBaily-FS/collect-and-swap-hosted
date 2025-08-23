@@ -55,7 +55,7 @@ export const useTradeManager = (userId) => {
     }
   };
 
-  const deleteTradeProposal = async (id) => {
+  const deleteProposal = async (id) => {
     try {
       const res = await axios.delete(
         `${apiURL}/api/trade-proposals/delete/${id}`
@@ -76,7 +76,7 @@ export const useTradeManager = (userId) => {
     activeTradeCount,
     proposeTrade,
     updateTradeStatus,
-    deleteTradeProposal,
+    deleteProposal,
     fetchTradeRequests,
   };
 };

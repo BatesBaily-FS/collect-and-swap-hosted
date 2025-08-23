@@ -43,7 +43,7 @@ const TradeActivitySection = ({ userId }) => {
                   Reject
                 </button>
                 <button
-                  onClick={() => deleteProposal(trade._id)}
+                  onClick={() => deleteProposal(trade._id, "delete")}
                   className={styles.delete}
                 >
                   Delete
