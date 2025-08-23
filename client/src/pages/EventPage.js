@@ -5,10 +5,13 @@ import Header from "../components/Header";
 import styles from "./EventPage.module.css";
 import { useEventManager } from "../hooks/eventManager";
 
+const RESULTS_PER_PAGE = 6;
+
 const ExplorePage = () => {
   const navigate = useNavigate();
   const { events, activeEvents, loading, error } = useEventManager();
   const [searchTerm, setSearchTerm] = useState("");
+  const [visibleCount, setVisibleCount] = useState(RESULTS_PER_PAGE);
 
   const filteredEvents = events.filter(
     (event) =>
@@ -18,6 +21,8 @@ const ExplorePage = () => {
       (event.location &&
         event.location.toLowerCase().includes(searchTerm.toLowerCase()))
   );
+
+  const visibleEvents = filteredEvents.slice(0, visibleCount);
 
   const handleClick = () => {
     navigate("/create-event");
@@ -57,10 +62,10 @@ const ExplorePage = () => {
           {error && <p>{error.message || error.toString()}</p>}
 
           <section className={styles.eventsContainer}>
-            {filteredEvents.length === 0 && loading ? (
+            {visibleCount.length === 0 && loading ? (
               <p>No events found</p>
             ) : (
-              filteredEvents.map((event) => (
+              visibleEvents.map((event) => (
                 <div key={event._id} className={styles.eventRow}>
                   <label className={styles.name}>{event.eventName}</label>
                   <label className={styles.date}>{event.date}</label>
@@ -80,6 +85,16 @@ const ExplorePage = () => {
               ))
             )}
           </section>
+
+          {visibleCount < filteredEvents.length && (
+            <button
+              className={styles.loadMoreButton}
+              onClick={() => setVisibleCount((prev) => prev + RESULTS_PER_PAGE)}
+              style={{ margin: "1rem auto", display: "block" }}
+            >
+              Load More
+            </button>
+          )}
         </main>
       </div>
     </>
