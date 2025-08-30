@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import styles from "./ExplorePage.module.css";
 
+// categories to update weekly/biweekly - works by updating label and matching query (not random try to make appropriate to the season or current events)
+
 const exploreCategories = [
   { key: "trending", label: "Trending Now", query: "trending now" },
   {
@@ -38,6 +40,7 @@ const ExplorePage = () => {
     fetchAllCategories();
   }, []);
 
+  // all books on the explore page are pulled from Google Books API
   const renderBooks = (books) =>
     books.map((book) => (
       <Link key={book.id} to={`/google/${book.id}`} className={styles.bookLink}>

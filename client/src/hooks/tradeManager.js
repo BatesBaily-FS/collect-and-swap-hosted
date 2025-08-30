@@ -1,6 +1,8 @@
 import { useEffect, useState, useMemo } from "react";
 import axios from "axios";
 
+// handles functionality of trade activity section
+
 const apiURL = process.env.REACT_APP_API_URL || "";
 
 export const useTradeManager = (userId) => {

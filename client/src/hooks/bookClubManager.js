@@ -1,6 +1,8 @@
 import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 
+// handles functionality of club activity section
+
 const apiURL = process.env.REACT_APP_API_URL;
 
 export const useBookClubManager = () => {

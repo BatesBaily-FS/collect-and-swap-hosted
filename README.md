@@ -20,6 +20,12 @@ The platform encourages affordable book ownership, promotes sustainability throu
 
 ---
 
+## Requirements
+
+- Node.js v18+
+- npm v9+
+- Modern browser (Chrome, Firefox, Edge)
+
 ## How to use
 
 - Git clone https://github.com/BatesBaily-FS/2503-WDV349-BatesBaily.git
@@ -36,6 +42,13 @@ The platform encourages affordable book ownership, promotes sustainability throu
 - cd client
 - npm install
 - npm start (default localhost:3000)
+
+---
+
+## Contact
+
+Created by Baily N Bates
+email: batesbailydev@gmail.com
 
 ---
 

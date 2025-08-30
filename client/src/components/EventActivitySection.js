@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useEventManager } from "../hooks/eventManager";
 import styles from "./EventActivitySection.module.css";
 
+// manages event activity on the event details page
+
 const EventActivitySection = ({ currentUser }) => {
   const { events, loading, error } = useEventManager();
   const [search, setSearch] = useState("");

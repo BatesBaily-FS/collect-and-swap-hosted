@@ -1,9 +1,14 @@
+import React, { useState } from "react";
 import { useTradeManager } from "../hooks/tradeManager";
 import styles from "./TradeActivitySection.module.css";
+
+// manages users trade activity and history on the profile page
 
 const userId = localStorage.getItem("_id");
 
 const TradeActivitySection = ({ userId }) => {
+  const [showHistory, setShowHistory] = useState(false);
+
   const {
     tradeRequests,
     tradeHistory,
@@ -53,7 +58,14 @@ const TradeActivitySection = ({ userId }) => {
           ))
       )}
       <h3 className={styles.subHeading}>Trade History</h3>
-      {tradeHistory.length === 0 ? (
+      {!showHistory ? (
+        <button
+          className={styles.showHistoryButton}
+          onClick={() => setShowHistory(true)}
+        >
+          View History
+        </button>
+      ) : tradeHistory.length === 0 ? (
         <p className={styles.emptyMessage}>No completed trades.</p>
       ) : (
         tradeHistory.map((trade) => (

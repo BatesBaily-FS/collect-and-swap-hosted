@@ -17,6 +17,7 @@ const CreateBookClub = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  // gets current users profile to make book club and auto population
   useEffect(() => {
     const storedProfile = localStorage.getItem("userProfile");
     if (storedProfile) {

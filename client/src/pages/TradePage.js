@@ -11,9 +11,12 @@ const TradePage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  // update this weekly or biweekly (how books are populated on the trade page)
   useEffect(() => {
     fetchBooks("best sellers");
   }, []);
+
+  // this will change to fetch from /api/book (All Books for trade) once enough users collection have been established. For now they are placeholders fetched from Google Book API
 
   const fetchBooks = async (term) => {
     setLoading(true);
