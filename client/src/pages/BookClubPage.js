@@ -5,7 +5,7 @@ import styles from "./BookClubPage.module.css";
 import { useNavigate } from "react-router-dom";
 import { useBookClubManager } from "../hooks/bookClubManager.js";
 
-const RESULTS_PER_PAGE = 10;
+const RESULTS_PER_PAGE = 6;
 
 function BookClubPage({ currentUser }) {
   const navigate = useNavigate();

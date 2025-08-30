@@ -31,7 +31,6 @@
   color: #999999;
   text-align: center;
   height: 0.9rem;
-  padding-top: 0.2rem;
 }
 
 .tradeCard,
@@ -40,6 +39,10 @@
   border-radius: 8px;
   padding: 0.5rem;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+}
+
+.showHistoryButton {
+  font-size: 0.75rem;
 }
 
 .tradeInfo {

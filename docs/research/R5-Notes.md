@@ -42,7 +42,7 @@ Now that I am back working on this project it is important for me to establish t
 
 At the end of the last phase, I had established a prototype with my desired layout and visuals. After going back, I believe my project navigation would benefit from having an additional "Book Club" tab rather than only access through the explore tab. I believe it is a component that holds great impact but with its current setup is easily overlooked. I must evaluate if it is worth the time and effort it will take to add an additional page.
 
-- Adding a dedicated "Book Club" tab will increase the visability of this feature, making it easier for users to find and interact with. When important features are hidden under secondary navigation (like only inside the "explore" tab), they can easily be overlooked leading to lower engagement.
+- Adding a dedicated "Book Club" tab will increase the viability of this feature, making it easier for users to find and interact with. When important features are hidden under secondary navigation (like only inside the "explore" tab), they can easily be overlooked leading to lower engagement.
 
 - Users expect primary features to be accessible from the main navigation. Since Book Clubs are a important aspect of my app's concept, it is important that it is displayed as such.
 

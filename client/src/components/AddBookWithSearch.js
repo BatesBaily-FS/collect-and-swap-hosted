@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import styles from "./AddBookWithSearch.module.css";
 
+// component for adding books to collection with search on profile page
+
 console.log("API URL:", process.env.REACT_APP_API_URL);
 const apiURL = process.env.REACT_APP_API_URL || "";
 

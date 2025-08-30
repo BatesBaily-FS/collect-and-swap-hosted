@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useBookClubManager } from "../hooks/bookClubManager";
 import styles from "./ClubActivitySection.module.css";
 
+// manages book club activity on the book club detail page
+
 const ClubActivitySection = ({ currentUser }) => {
   const { clubs, joinClub, fetchClubs, loading, error } = useBookClubManager();
   const [search, setSearch] = useState("");
